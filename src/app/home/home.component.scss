@@ -1,0 +1,34 @@
+.chart-wrapper {
+  width: 100%;
+  height: 35em;
+}
+
+.chart {
+  padding: 2em;
+  width: 80%;
+  height: 35em;
+  margin: 0 auto;
+}
+
+.recommendation-wrapper {
+  padding-top: 3em;
+}
+
+.recommendations {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  min-height: 25em;
+}
+
+mat-grid-list {
+  width: 80%;
+}
+
+.subheading {
+  margin-left: 8em;
+}
+
+.mat-card {
+  padding-bottom: 0;
+}

@@ -1,0 +1,75 @@
+<div role="main" class="main">
+    <h3 class="subheading">Price evolution</h3>
+  <div class="chart">
+    <ngx-charts-line-chart
+      scheme="cool"
+      [legend]="true"
+      [showXAxisLabel]="true"
+      [showYAxisLabel]="true"
+      [xAxis]="true"
+      [yAxis]="true"
+      xAxisLabel="Month"
+      yAxisLabel="Procent"
+      [timeline]="true"
+      [results]="data"
+      [autoScale]="true"
+      style="fill: #fff"
+    >
+    </ngx-charts-line-chart>
+  </div>
+
+  <div class="recommendation-wrapper">
+    <h3 class="subheading">Recommendations based on your likes</h3>
+    <div class="recommendations">
+      <mat-grid-list cols="3" rowHeight="20em" gutterSize="5em">
+        <mat-grid-tile>
+          <a routerLink="receipt" routerLinkActive="active">
+            <mat-card>
+              <mat-card-header>
+                <mat-card-title>Salad bowl</mat-card-title>
+              </mat-card-header>
+              <img
+                mat-card-image
+                src="../../assets/images/bowl.jpg"
+                alt="Salad"
+              />
+              <p>12%</p>
+            </mat-card>
+          </a>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+          <a routerLink="receipt" routerLinkActive="active">
+            <mat-card>
+              <mat-card-header>
+                <mat-card-title>Veggie Burger</mat-card-title>
+              </mat-card-header>
+              <img
+                mat-card-image
+                src="../../assets/images/burger.jpg"
+                alt="Burger"
+              />
+              <p>15%</p>
+            </mat-card>
+          </a>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+          <a routerLink="receipt" routerLinkActive="active">
+            <mat-card>
+              <mat-card-header>
+                <mat-card-title>Green pasta</mat-card-title>
+              </mat-card-header>
+              <img
+                mat-card-image
+                src="../../assets/images/pasta.jpg"
+                alt="Pasta"
+              />
+              <p>23%</p>
+            </mat-card>
+          </a>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  </div>
+</div>
