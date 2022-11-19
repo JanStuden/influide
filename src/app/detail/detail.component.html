@@ -9,10 +9,11 @@
       <input matInput type="number" value="4" />
     </mat-form-field>
 
-    <div>
-      <ul>
-        <li>#1</li>
-        <li>#2</li>
+    <div *ngIf="ingridients">
+      <ul *ngFor="let ingridient of ingridients">
+        <li>
+          {{ ingridient.amount }} {{ ingridient.unit }} {{ ingridient.name }}
+        </li>
       </ul>
     </div>
 
@@ -27,17 +28,8 @@
 
   <div>
     <p>Receipt details</p>
-    <p>
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-      clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-      amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-      nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-      diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-      Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-      sit amet.
-    </p>
+    <div [innerHTML]="instructions">
+    </div>
     <button mat-raised-button>Add to Savings</button>
   </div>
 </div>
