@@ -1,11 +1,38 @@
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
 .ingridientHeader{
     display: flex;
+    align-items: center;
+}
+
+.spacer {
+    flex: 1 1 auto;
 }
 
 .savingsCalculation{
     color: #8BC34A;
+    font-size: larger;
+}
+
+.portionInput {
+    display: flex;
+    align-items: center;
+    padding: 2em 0;
+}
+
+::ng-deep .portionInput .mat-form-field-wrapper{
+    padding: 0;
+}
+
+.portionInput button{
+    font-size: large;
+    min-height: 3.5em;
 }
 
 .buyButton{
+    margin-top: 1em;
     background-color: #CC071E;
 }

@@ -20,52 +20,20 @@
 
   <div class="recommendation-wrapper">
     <h3 class="subheading">Recommendations based on your likes</h3>
-    <div class="recommendations">
-      <mat-grid-list cols="3" rowHeight="20em" gutterSize="5em">
+    <div class="recommendations" *ngIf="receipts">
+      <mat-grid-list cols="3" rowHeight="20em" gutterSize="5em" *ngFor="let receipt of receipts">
         <mat-grid-tile>
-          <a routerLink="receipt" routerLinkActive="active">
+          <a routerLink="receipt/{{receipt[0]}}" routerLinkActive="active">
             <mat-card>
               <mat-card-header>
-                <mat-card-title>Salad bowl</mat-card-title>
+                <mat-card-title>{{receipt[1].name}}</mat-card-title>
               </mat-card-header>
               <img
                 mat-card-image
-                src="../../assets/images/bowl.jpg"
-                alt="Salad"
+                [src]="receipt[1].image"
+                [alt]="receipt[1].name"
               />
               <p>12%</p>
-            </mat-card>
-          </a>
-        </mat-grid-tile>
-
-        <mat-grid-tile>
-          <a routerLink="receipt" routerLinkActive="active">
-            <mat-card>
-              <mat-card-header>
-                <mat-card-title>Veggie Burger</mat-card-title>
-              </mat-card-header>
-              <img
-                mat-card-image
-                src="../../assets/images/burger.jpg"
-                alt="Burger"
-              />
-              <p>15%</p>
-            </mat-card>
-          </a>
-        </mat-grid-tile>
-
-        <mat-grid-tile>
-          <a routerLink="receipt" routerLinkActive="active">
-            <mat-card>
-              <mat-card-header>
-                <mat-card-title>Green pasta</mat-card-title>
-              </mat-card-header>
-              <img
-                mat-card-image
-                src="../../assets/images/pasta.jpg"
-                alt="Pasta"
-              />
-              <p>23%</p>
             </mat-card>
           </a>
         </mat-grid-tile>

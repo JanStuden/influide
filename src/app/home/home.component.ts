@@ -1,4 +1,5 @@
 import { Component, OnInit, Renderer2, ElementRef } from '@angular/core';
+import { ReceiptService } from '../services/receipt.service';
 
 @Component({
   selector: 'app-home',
@@ -8,8 +9,13 @@ import { Component, OnInit, Renderer2, ElementRef } from '@angular/core';
 export class HomeComponent implements OnInit {
   public view = [700, 300];
   public data;
+  public receipts: any;
 
-  constructor(private _renderer: Renderer2, private _el: ElementRef) {
+  constructor(
+    private _renderer: Renderer2,
+    private _el: ElementRef,
+    private receiptService: ReceiptService
+  ) {
     this.data = [
       {
         name: 'Rice',
@@ -53,7 +59,7 @@ export class HomeComponent implements OnInit {
           {
             value: 26.1,
             name: 'October',
-          }
+          },
         ],
       },
       {
@@ -98,7 +104,7 @@ export class HomeComponent implements OnInit {
           {
             value: 26.0,
             name: 'October',
-          }
+          },
         ],
       },
       {
@@ -143,7 +149,7 @@ export class HomeComponent implements OnInit {
           {
             value: 15.1,
             name: 'October',
-          }
+          },
         ],
       },
       {
@@ -188,7 +194,7 @@ export class HomeComponent implements OnInit {
           {
             value: 40.6,
             name: 'October',
-          }
+          },
         ],
       },
       {
@@ -233,7 +239,7 @@ export class HomeComponent implements OnInit {
           {
             value: 3.8,
             name: 'October',
-          }
+          },
         ],
       },
       {
@@ -278,7 +284,7 @@ export class HomeComponent implements OnInit {
           {
             value: 12.3,
             name: 'October',
-          }
+          },
         ],
       },
       {
@@ -323,18 +329,24 @@ export class HomeComponent implements OnInit {
           {
             value: 19.4,
             name: 'October',
-          }
+          },
         ],
       },
     ];
   }
 
-  ngOnInit(): void {}
-
-
   ngAfterViewInit() {
     const line = this._el.nativeElement.querySelectorAll('.line')[6];
     this._renderer.setStyle(line, 'stroke-dasharray', '50px');
     this._renderer.setStyle(line, 'stroke-width', '8px');
+  }
+  ngOnInit(): void {
+    this.loadReceipts();
+  }
+
+  loadReceipts() {
+    this.receiptService.getReceipts().subscribe((receipts: any) => {
+      this.receipts = Object.entries(receipts);
+    });
   }
 }
