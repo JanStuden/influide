@@ -11,7 +11,7 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'receipt/:id',
+    path: 'recipe/:id',
     component: DetailComponent,
   },
   {
@@ -19,7 +19,7 @@ const routes: Routes = [
     component: SavingsComponent,
   },
   {
-    path: 'ownReceipt',
+    path: 'ownRecipe',
     component: OwnReceiptComponent,
   },
 ];
