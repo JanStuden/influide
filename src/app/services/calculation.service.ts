@@ -30,10 +30,9 @@ export class CalculationService {
         let ingredientReference = this.getUnitPrice(ingridient.name);
         let unitPrice = ingredientReference.price;
 
-        let weightingFactor = unitPrice / totalPrice;
-
-        let ingredientInflation =
-          this.inflationRates[ingredientReference.category].inflation;
+        let weightingFactor = (unitPrice*ingridient.internalAmount) / totalPrice;
+        console.log("wieghtFacot: "+ingridient.internalAmount*unitPrice/totalPrice)
+        let ingredientInflation = this.inflationRates[ingredientReference.category].inflation;
 
         let weightedInflatedPrice = weightingFactor * ingredientInflation;
 
@@ -41,6 +40,8 @@ export class CalculationService {
       }
     }
 
+    console.log(inflationSum)
+    
     return referenceInflation - inflationSum;
   }
 
