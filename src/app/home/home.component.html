@@ -54,22 +54,18 @@
     </div>
 
     <div class="recommendations" *ngIf="receipts">
-      <mat-grid-list cols="3" gutterSize="5em" rowHeight="fit">
+      <mat-grid-list cols="3" gutterSize="5em" rowHeight="2:2">
         <mat-grid-tile *ngFor="let receipt of receipts">
-          <a
-            routerLink="recipe/{{ receipt[0] }}"
-            routerLinkActive="true"
-            class="cardLink"
-          >
-            <mat-card>
-              <mat-card-header>
-                <mat-card-title>{{ receipt[1].name }}</mat-card-title>
-              </mat-card-header>
-              <img
-                mat-card-image
-                [src]="receipt[1].image"
-                [alt]="receipt[1].name"
-              />
+          <div class="card">
+            <a
+              routerLink="recipe/{{ receipt[0] }}"
+              routerLinkActive="true"
+              class="cardLink"
+            >
+              <p class="cardHeader">{{ receipt[1].name }}</p>
+              <div class="image-container">
+                <img [src]="receipt[1].image" [alt]="receipt[1].name" />
+              </div>
               <p class="saving success" *ngIf="receipt[1].saving >= 25">
                 {{ receipt[1].saving }}
               </p>
@@ -82,10 +78,15 @@
               <p class="saving warn" *ngIf="receipt[1].saving < 10">
                 {{ receipt[1].saving }}
               </p>
-            </mat-card>
-          </a>
+            </a>
+          </div>
         </mat-grid-tile>
       </mat-grid-list>
     </div>
+  </div>
+  <div class="ownRecipe">
+    <button mat-raised-button routerLink="/ownRecipe" color="primary">
+      Calculate the score of your recipes
+    </button>
   </div>
 </div>

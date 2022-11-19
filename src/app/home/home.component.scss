@@ -36,12 +36,30 @@
   padding-top: 2em;
 }
 
-.cardLink{
-  text-decoration: none;
+.card {
+  background-color: #424242;
+  width: 100%;
 }
 
-mat-card-header{
-  margin-top: 1em!important;
+.card a{
+  text-decoration: none;
+  color: #fff;
+}
+
+.cardHeader{
+  text-align: center;
+  padding: 0em 2em;
+}
+
+.image-container{
+  height: 12em;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.image-container img{
+  width: 100%;
 }
 
 .saving {
@@ -66,3 +84,12 @@ mat-grid-list {
   stroke-width: 50px;
 }
 
+.ownRecipe{
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 4em;
+}
+
+.ownRecipe button{
+  font-size: large;
+}
