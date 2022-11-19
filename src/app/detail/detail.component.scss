@@ -6,6 +6,20 @@
     color: #8BC34A;
 }
 
+.portionInput {
+    display: flex;
+    align-items: center;
+}
+
+::ng-deep .portionInput .mat-form-field-wrapper{
+    padding: 0;
+}
+
+.portionInput button{
+    font-size: large;
+    min-height: 3.5em;
+}
+
 .buyButton{
     background-color: #CC071E;
 }

@@ -4,15 +4,24 @@
       <p>Ingridients</p>
       <p class="savingsCalculation">15%</p>
     </div>
-    <mat-form-field appearance="fill">
-      <mat-label>Portions</mat-label>
-      <input matInput type="number" value="4" />
-    </mat-form-field>
+    <div class="portionInput">
+      <button mat-raised-button (click)="decreasePortions()">-</button>
+      <mat-form-field appearance="fill">
+        <mat-label>Portions</mat-label>
+        <input matInput disabled [(ngModel)]="portions" />
+      </mat-form-field>
+      <button mat-raised-button (click)="portions = portions + 1">+</button>
+    </div>
 
     <div *ngIf="ingridients">
       <ul *ngFor="let ingridient of ingridients">
         <li>
-          {{ ingridient.amount }} {{ ingridient.unit }} {{ ingridient.name }}
+          {{
+            ingridient.amount
+              ? portions * (ingridient.amount / defaultPortions)
+              : ""
+          }}
+          {{ ingridient.unit }} {{ ingridient.name }}
         </li>
       </ul>
     </div>
@@ -22,14 +31,13 @@
       href="https://shop.rewe.de/recipes/mapping/826ac032201043a2a6c3af7d7bdfe3de392a6269b442750e2e190bcf2c2e0f61?serviceTypes=delivery"
       target="_blank"
       class="buyButton"
-      >Buy on REWE</a
+      ><mat-icon>add_shopping_cart</mat-icon> Buy on REWE</a
     >
   </div>
 
   <div>
     <p>Receipt details</p>
-    <div [innerHTML]="instructions">
-    </div>
+    <div [innerHTML]="instructions"></div>
     <button mat-raised-button>Add to Savings</button>
   </div>
 </div>
