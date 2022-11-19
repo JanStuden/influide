@@ -1,19 +1,37 @@
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">  
 <table class="table table-bordered" formArrayName="quantities">  
     <tr>  
-      <th colspan="2">Add Multiple Quantity:</th>  
-      <th width="150px"><button type="button" (click)="addColoumn()" class="btn btn-primary">Add More</button></th>  
+      <th colspan="2">Add Multiple Ingredients:</th>  
+      <th width="150px"><button mat-icon-button type="button" (click)="addRow()" class="btn btn-primary">
+        <mat-icon>add</mat-icon>
+      </button></th>  
     </tr>  
     <tr *ngFor="let quantity of quantities().controls; let i=index" [formGroupName]="i">  
       <td>  
-          Quantity :  
-          <input type="text" formControlName="qty" class="form-control">  
+          Ingredient :  
+          <!-- <input (keyup)="calc()" type="text" formControlName="name" class="form-control">   -->
+          <mat-form-field  appearance="fill"  type="text"  class="form-control">
+            <mat-select (selectionChange)="calc()" formControlName="name">
+              <mat-option  *ngFor="let food of ingredientsArray" [value]="food" >
+                {{food}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
       </td>  
       <td>  
-          Price:  
-          <input type="text" formControlName="price" class="form-control">  
+          Amount (in g/ml):  
+          <!-- <input (keyup)="calc()" type="number" formControlName="internalAmount" mat-input>   -->
+          <mat-form-field (keyup)="calc()"  class="example-full-width">
+            <mat-label>Favorite food</mat-label>
+            <input matInput placeholder="Ex. Pizza"  type="number" formControlName="internalAmount" >
+          </mat-form-field>
       </td>  
       <td>  
-          <button (click)="removeColoumn($event)" class="btn btn-danger">Remove</button>  
+          <button mat-icon-button (click)="removeRow(i)" class="btn btn-danger">
+            <mat-icon>delete</mat-icon>
+          </button>  
       </td>  
     </tr>  
-  </table>  
+  </table> 
+  <p>Your savings in percent: {{inflation}}</p> 
+</form>  
