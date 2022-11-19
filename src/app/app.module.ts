@@ -18,6 +18,7 @@ import { FormsModule } from '@angular/forms';
 import { SavingsComponent } from './savings/savings.component';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
+import { OwnReceiptComponent } from './own-receipt/own-receipt.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { MatTableModule } from '@angular/material/table';
     HomeComponent,
     DetailComponent,
     SavingsComponent,
+    OwnReceiptComponent,
   ],
   imports: [
     BrowserModule,
