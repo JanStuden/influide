@@ -10,6 +10,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { DetailComponent } from './detail/detail.component';
 import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field'; 
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, DetailComponent],
@@ -21,6 +24,9 @@ import { MatIconModule } from '@angular/material/icon';
     MatToolbarModule,
     NgxChartsModule,
     MatIconModule,
+    MatButtonModule,
+    MatInputModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent],

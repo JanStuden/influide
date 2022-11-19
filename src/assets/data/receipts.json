@@ -1,0 +1,16 @@
+{
+    "1": {
+        "ingridients": [
+            {
+                "name": "Pfeffer",
+                "ignore": true
+            },
+            {
+                "name": "Tomatos",
+                "unit": "g",
+                "amount": 200,
+                "internalAmount": 200
+            }
+        ]
+    }
+}
