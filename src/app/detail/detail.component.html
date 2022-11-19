@@ -1,43 +1,55 @@
 <div role="main" class="main">
-  <div>
-    <div class="ingridientHeader">
-      <p>Ingridients</p>
-      <p class="savingsCalculation">15%</p>
-    </div>
-    <div class="portionInput">
-      <button mat-raised-button (click)="decreasePortions()">-</button>
-      <mat-form-field appearance="fill">
-        <mat-label>Portions</mat-label>
-        <input matInput disabled [(ngModel)]="portions" />
-      </mat-form-field>
-      <button mat-raised-button (click)="portions = portions + 1">+</button>
-    </div>
+  <mat-grid-list cols="2" rowHeight="1:1" class="container">
+    <mat-grid-tile>
+      <h1>{{ receipt.name }}</h1>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <img [src]="receipt.image" alt="{{ receipt.name }}" />
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div>
+        <div class="ingridientHeader">
+          <p>Ingridients</p>
+          <span class="spacer"></span>
+          <p class="savingsCalculation">15%</p>
+        </div>
+        <div class="portionInput">
+          <button mat-raised-button (click)="decreasePortions()">-</button>
+          <mat-form-field appearance="fill">
+            <mat-label>Portions</mat-label>
+            <input matInput disabled [(ngModel)]="portions" />
+          </mat-form-field>
+          <button mat-raised-button (click)="portions = portions + 1">+</button>
+        </div>
 
-    <div *ngIf="ingridients">
-      <ul *ngFor="let ingridient of ingridients">
-        <li>
-          {{
-            ingridient.amount
-              ? portions * (ingridient.amount / defaultPortions)
-              : ""
-          }}
-          {{ ingridient.unit }} {{ ingridient.name }}
-        </li>
-      </ul>
-    </div>
+        <div *ngIf="ingridients">
+          <ul *ngFor="let ingridient of ingridients">
+            <li>
+              {{
+                ingridient.amount
+                  ? portions * (ingridient.amount / defaultPortions)
+                  : ""
+              }}
+              {{ ingridient.unit }} {{ ingridient.name }}
+            </li>
+          </ul>
+        </div>
 
-    <a
-      mat-raised-button
-      href="https://shop.rewe.de/recipes/mapping/826ac032201043a2a6c3af7d7bdfe3de392a6269b442750e2e190bcf2c2e0f61?serviceTypes=delivery"
-      target="_blank"
-      class="buyButton"
-      ><mat-icon>add_shopping_cart</mat-icon> Buy on REWE</a
-    >
-  </div>
-
-  <div>
-    <p>Receipt details</p>
-    <div [innerHTML]="instructions"></div>
-    <button mat-raised-button>Add to Savings</button>
-  </div>
+        <a
+          mat-raised-button
+          href="https://shop.rewe.de/recipes/mapping/826ac032201043a2a6c3af7d7bdfe3de392a6269b442750e2e190bcf2c2e0f61?serviceTypes=delivery"
+          target="_blank"
+          class="buyButton"
+          ><mat-icon>add_shopping_cart</mat-icon> Buy on REWE</a
+        >
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div>
+        <p>Receipt details</p>
+        <div [innerHTML]="instructions"></div>
+        <button mat-raised-button>Add to Savings</button>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ReceiptService } from '../services/receipt.service';
 
 @Component({
   selector: 'app-home',
@@ -8,8 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   public view = [700, 300];
   public data;
+  public receipts: any;
 
-  constructor() {
+  constructor(private receiptService: ReceiptService) {
     this.data = [
       {
         name: 'Rice',
@@ -139,5 +141,13 @@ export class HomeComponent implements OnInit {
     ];
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.loadReceipts();
+  }
+
+  loadReceipts() {
+    this.receiptService.getReceipts().subscribe((receipts: any) => {
+      this.receipts = Object.entries(receipts);
+    });
+  }
 }

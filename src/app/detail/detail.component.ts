@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ReceiptService } from '../services/receipt.service';
 
 @Component({
@@ -12,9 +13,15 @@ export class DetailComponent implements OnInit {
   public instructions: string;
   public portions: number = 4;
   public defaultPortions: number = 4;
+  public receipt: any;
 
-  constructor(private receiptService: ReceiptService) {
-    this.id = '1';
+  constructor(
+    private receiptService: ReceiptService,
+    private route: ActivatedRoute
+  ) {
+    route.params.subscribe((params) => {
+      this.id = params['id'];
+    });
   }
 
   ngOnInit(): void {
@@ -30,6 +37,7 @@ export class DetailComponent implements OnInit {
   private parseReceipt() {
     this.receiptService.getReceipts().subscribe((receipts: any) => {
       let receipt = receipts[this.id];
+      this.receipt = receipt;
 
       this.ingridients = receipt.ingridients;
       this.instructions = receipt.instructions;
