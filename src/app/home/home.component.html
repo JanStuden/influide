@@ -1,5 +1,5 @@
 <div role="main" class="main">
-    <h3 class="subheading">Price evolution</h3>
+  <h3 class="subheading">Price evolution</h3>
   <div class="chart">
     <ngx-charts-line-chart
       scheme="cool"
@@ -21,12 +21,17 @@
   <div class="recommendation-wrapper">
     <h3 class="subheading">Recommendations based on your likes</h3>
     <div class="recommendations" *ngIf="receipts">
-      <mat-grid-list cols="3" rowHeight="20em" gutterSize="5em" *ngFor="let receipt of receipts">
+      <mat-grid-list
+        cols="3"
+        rowHeight="20em"
+        gutterSize="5em"
+        *ngFor="let receipt of receipts"
+      >
         <mat-grid-tile>
-          <a routerLink="receipt/{{receipt[0]}}" routerLinkActive="active">
+          <a routerLink="receipt/{{ receipt[0] }}" routerLinkActive="true">
             <mat-card>
               <mat-card-header>
-                <mat-card-title>{{receipt[1].name}}</mat-card-title>
+                <mat-card-title>{{ receipt[1].name }}</mat-card-title>
               </mat-card-header>
               <img
                 mat-card-image

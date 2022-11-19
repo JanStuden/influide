@@ -15,9 +15,17 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { SavingsComponent } from './savings/savings.component';
+import { MatListModule } from '@angular/material/list';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, DetailComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    DetailComponent,
+    SavingsComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -30,7 +38,9 @@ import { FormsModule } from '@angular/forms';
     MatInputModule,
     MatFormFieldModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatListModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ReceiptService } from '../services/receipt.service';
 import * as groceries from '../../assets/data/lebensmittel.json';
 import * as inflationRates from '../../assets/data/inflation.json';
+import { SavingService } from '../services/saving.service';
 
 @Component({
   selector: 'app-detail',
@@ -23,7 +24,8 @@ export class DetailComponent implements OnInit {
 
   constructor(
     private receiptService: ReceiptService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private savingService: SavingService
   ) {
     route.params.subscribe((params) => {
       this.id = params['id'];
@@ -89,5 +91,14 @@ export class DetailComponent implements OnInit {
     return this.groceries.groceries.find(
       (e) => e.name.toLowerCase() === name.toLowerCase()
     );
+  }
+
+  public addSaving() {
+    let receipt = {
+      id: this.id,
+      name: this.receipt.name,
+      saving: this.saving,
+    };
+    this.savingService.addSaving(receipt);
   }
 }
