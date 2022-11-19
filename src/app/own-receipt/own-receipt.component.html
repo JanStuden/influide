@@ -1,37 +1,61 @@
-<form [formGroup]="productForm" (ngSubmit)="onSubmit()">  
-<table class="table table-bordered" formArrayName="quantities">  
-    <tr>  
-      <th colspan="2">Add Multiple Ingredients:</th>  
-      <th width="150px"><button mat-icon-button type="button" (click)="addRow()" class="btn btn-primary">
-        <mat-icon>add</mat-icon>
-      </button></th>  
-    </tr>  
-    <tr *ngFor="let quantity of quantities().controls; let i=index" [formGroupName]="i">  
-      <td>  
-          Ingredient :  
-          <!-- <input (keyup)="calc()" type="text" formControlName="name" class="form-control">   -->
-          <mat-form-field  appearance="fill"  type="text"  class="form-control">
-            <mat-select (selectionChange)="calc()" formControlName="name">
-              <mat-option  *ngFor="let food of ingredientsArray" [value]="food" >
-                {{food}}
-              </mat-option>
-            </mat-select>
-        </mat-form-field>
-      </td>  
-      <td>  
-          Amount (in g/ml):  
-          <!-- <input (keyup)="calc()" type="number" formControlName="internalAmount" mat-input>   -->
-          <mat-form-field (keyup)="calc()"  class="example-full-width">
-            <mat-label>Favorite food</mat-label>
-            <input matInput placeholder="Ex. Pizza"  type="number" formControlName="internalAmount" >
-          </mat-form-field>
-      </td>  
-      <td>  
-          <button mat-icon-button (click)="removeRow(i)" class="btn btn-danger">
-            <mat-icon>delete</mat-icon>
-          </button>  
-      </td>  
-    </tr>  
-  </table> 
-  <p>Your savings in percent: {{inflation}}</p> 
-</form>  
+<div role="main" class="main">
+  <h1>Calculate the score for your own recipe</h1>
+  <div>
+    <p class="score">
+      Your savings:
+      <strong class="success" *ngIf="inflation >= 25">{{ inflation | number: '1.0-2' }}  %</strong>
+      <strong class="neutral" *ngIf="inflation < 25 && inflation >= 10">{{ inflation | number: '1.0-2' }} %</strong>
+      <strong class="warn" *ngIf="inflation < 10">{{ inflation | number: '1.0-2'}} %</strong>
+    </p>
+    <form [formGroup]="productForm">
+      <table class="table" formArrayName="quantities">
+        <tr>
+          <th>Ingredients:</th>
+          <th></th>
+          <th>
+            <button
+              mat-icon-button
+              type="button"
+              (click)="addRow()"
+              class="btn btn-primary"
+            >
+              <mat-icon>add</mat-icon>
+            </button>
+          </th>
+        </tr>
+        <tr
+          *ngFor="let quantity of quantities().controls; let i = index"
+          [formGroupName]="i"
+        >
+          <td>
+            <mat-form-field appearance="fill" type="text" class="form-control">
+              <mat-select
+                (selectionChange)="calc()"
+                formControlName="name"
+                placeholder="Ingredient"
+              >
+                <mat-option
+                  *ngFor="let food of ingredientsArray"
+                  [value]="food"
+                >
+                  {{ food }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field (keyup)="calc()">
+              <mat-label>Amount (in g/ml):</mat-label>
+              <input matInput type="number" formControlName="internalAmount" />
+            </mat-form-field>
+          </td>
+          <td class="action">
+            <button mat-icon-button (click)="removeRow(i)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</div>
