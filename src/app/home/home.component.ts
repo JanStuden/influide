@@ -1,5 +1,6 @@
 import { Component, OnInit, Renderer2, ElementRef } from '@angular/core';
 import { ReceiptService } from '../services/receipt.service';
+import { FormGroup, FormControl, FormArray, FormBuilder } from '@angular/forms' 
 
 @Component({
   selector: 'app-home',
@@ -10,11 +11,17 @@ export class HomeComponent implements OnInit {
   public view = [700, 300];
   public data;
   public receipts: any;
+  public receiptCategory = ["vegetarian", "vegan", "noodles", "rice", "fish", "meat"]
+  public group: any;
+  public searchQuery : string;
+  private selectedArray :any = []
+  
 
   constructor(
     private _renderer: Renderer2,
     private _el: ElementRef,
-    private receiptService: ReceiptService
+    private receiptService: ReceiptService,
+    
   ) {
     this.data = [
       {
@@ -349,4 +356,50 @@ export class HomeComponent implements OnInit {
       this.receipts = Object.entries(receipts);
     });
   }
+
+  filterReceipts(){
+    this.receiptService.getReceipts().subscribe((receipts: any) => {
+      this.receipts = Object.entries(receipts);
+      
+      this.receipts=this.receipts.filter((e:any) => {
+        let output=this.selectedArray.every((element:any) => {
+            console.log("vorhandene Kat: " + e[1].category)
+            console.log("element: "+ element)
+            // console.log(this.receipts[0][1].category.includes(element))
+            return e[1].category.includes(element)
+        })
+        console.log(output)
+        return output;
+      });
+      
+    });
+  }
+  onFilterChange(event:any){
+    
+    if( event.value[0]!==undefined && !this.selectedArray.includes(event.value[0])){
+      this.selectedArray.push(event.value[0])
+    }
+    else{
+      this.selectedArray=this.selectedArray.filter((e:any)=> e !== event.source.value)
+    }
+  }
+  onKey(){
+    this.receiptService.getReceipts().subscribe((receipts: any) => {
+      this.receipts = Object.entries(receipts);
+      this.receipts=this.receipts.filter((e:any) => {
+        return e[1].name.toLowerCase().includes(this.searchQuery.toLowerCase())
+        console.log(e[1].name.includes(this.searchQuery))
+      });
+    });
+  }
+  public addColoumn() {
+
+  }
+  public removeColoumn(event:any){
+
+  
+  }
+  quantities() : FormArray {  
+    return this.productForm.get("quantities") as FormArray  
+  }  
 }

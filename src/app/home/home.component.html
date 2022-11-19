@@ -17,7 +17,18 @@
     >
     </ngx-charts-line-chart>
   </div>
-
+  
+  <div *ngIf="receiptCategory">
+    <mat-button-toggle-group (change)="onFilterChange($event)" *ngFor="let category of receiptCategory" name="categories" aria-label="Ingredients" multiple>
+      <mat-button-toggle value={{category}} (click)="filterReceipts()">{{category}}</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+ 
+    <mat-form-field (keyup)="onKey()"   class="example-full-width">
+      <mat-label>Favorite food</mat-label>
+      <input  [(ngModel)]="searchQuery" matInput placeholder="Ex. Pizza" >
+    </mat-form-field>
+  <p>{{searchQuery}}</p>
   <div class="recommendation-wrapper">
     <h3 class="subheading">Recommendations based on your likes</h3>
     <div class="recommendations" *ngIf="receipts">
@@ -40,4 +51,23 @@
       </mat-grid-list>
     </div>
   </div>
+  <table class="table table-bordered" formArrayName="quantities">  
+    <tr>  
+      <th colspan="2">Add Multiple Quantity:</th>  
+      <th width="150px"><button type="button" (click)="addColoumn()" class="btn btn-primary">Add More</button></th>  
+    </tr>  
+    <tr *ngFor="let quantity of quantities().controls; let i=index" [formGroupName]="i">  
+      <td>  
+          Quantity :  
+          <input type="text" formControlName="qty" class="form-control">  
+      </td>  
+      <td>  
+          Price:  
+          <input type="text" formControlName="price" class="form-control">  
+      </td>  
+      <td>  
+          <button (click)="removeColoumn($event)" class="btn btn-danger">Remove</button>  
+      </td>  
+    </tr>  
+  </table>  
 </div>

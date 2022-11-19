@@ -92,8 +92,7 @@
                 "amount": 4,
                 "internalAmount": 12
             }
-            
-
-        ]
+        ],
+        "category":["vegetarian", "vegan"]
     }
 }

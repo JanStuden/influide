@@ -43,4 +43,5 @@ export class DetailComponent implements OnInit {
       this.instructions = receipt.instructions;
     });
   }
+  
 }

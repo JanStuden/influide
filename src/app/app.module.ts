@@ -14,7 +14,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
+
+
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, DetailComponent],
@@ -30,7 +34,10 @@ import { FormsModule } from '@angular/forms';
     MatInputModule,
     MatFormFieldModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatChipsModule,
+    MatButtonToggleModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
