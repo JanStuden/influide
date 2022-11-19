@@ -1,7 +1,11 @@
 <div role="main" class="main savingsContainer">
   <h1>Your savings</h1>
 
-  <table mat-table class="savings" [dataSource]="savings">
+  <p *ngIf="savings.length == 0" class="center">
+    No recipes in your savings, add some on the detail pages
+  </p>
+
+  <table mat-table class="savings" [dataSource]="savings" *ngIf="savings.length > 0">
     <ng-container matColumnDef="name">
       <td mat-cell *matCellDef="let saving">{{ saving.name }}</td>
     </ng-container>

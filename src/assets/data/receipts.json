@@ -1,98 +1,111 @@
 {
-    "1": {
-        "name":"Ratatouille",
-        "image":"https://www.ndr.de/ratgeber/kochen/ratatouille104_v-podcast.jpg",
-        "instructions":"<p>Core the peppers and cut into small pieces with the aubergine and courgettes. Halve the cherry tomatoes. Peel the onion and cut into strips</p><p>Heat the olive oil in a pan. Press the garlic cloves with a knife and fry lightly with the onions. Add the tomato paste, fry briefly, deglaze with red wine and add the remaining vegetables, except for the tomatoes.</p> <p>Wash the herbs, pluck the leaves from the stems and chop finely. Add to the ratatouille and steam for about 10 minutes, stirring occasionally. Just before the end, add the tomatoes and season with salt and pepper.</p>",
-        "ingridients": [
-            {
-                "name": "Pepper",
-                "ignore": true
-            },
-            {
-                "name": "Banana Pepper",
-                "unit": "piece(s)",
-                "amount": 2,
-                "internalAmount": 200
-            },
-            {
-                "name": "Yellow Pepper",
-                "unit": "piece(s)",
-                "amount": 1,
-                "internalAmount": 250
-            },
-            {
-                "name": "Banana Pepper",
-                "unit": "piece(s)",
-                "amount": 2,
-                "internalAmount": 319
-            },
-            {
-                "name": "Eggplant",
-                "unit": "piece(s)",
-                "amount": 1,
-                "internalAmount": 340 
-            },
-            {
-                "name": "Courgette",
-                "unit": "piece(s)",
-                "amount": 1,
-                "internalAmount": 220
-            },
-            {
-                "name": "Cherry Tomatos",
-                "unit": "g",
-                "amount": 200,
-                "internalAmount": 200
-            },
-            {
-                "name": "Red Onion",
-                "unit": "piece(s)",
-                "amount": 1,
-                "internalAmount": 83
-            },
-            {
-                "name": "Cherry Tomatos",
-                "unit": "g",
-                "amount": 200,
-                "internalAmount": 200
-            },
-            {
-                "name": "Olive Oil",
-                "unit": "tablespoon(s)",
-                "amount": 2,
-                "internalAmount": 30
-            },
-            {
-                "name": "Garlic",
-                "unit": "clove",
-                "amount": 2,
-                "internalAmount": 6
-            },
-            {
-                "name": "tomato pith",
-                "unit": "tablespoon(s)",
-                "amount": 1,
-                "internalAmount": 20
-            },
-            {
-                "name": "Red Wine",
-                "ignore": true,
-                "unit": "tablespoon(s)",
-                "amount": 1
-            },
-            {
-                "name": "rosemary",
-                "unit": "branches",
-                "amount": 2,
-                "internalAmount": 6
-            },
-            {
-                "name": "thyme",
-                "unit": "branches",
-                "amount": 4,
-                "internalAmount": 12
-            }
-        ],
-        "category":["vegetarian", "vegan"]
-    }
+  "1": {
+    "name": "Ratatouille",
+    "image": "https://www.ndr.de/ratgeber/kochen/ratatouille104_v-podcast.jpg",
+    "instructions": "<p>Core the peppers and cut into small pieces with the aubergine and courgettes. Halve the cherry tomatoes. Peel the onion and cut into strips</p><p>Heat the olive oil in a pan. Press the garlic cloves with a knife and fry lightly with the onions. Add the tomato paste, fry briefly, deglaze with red wine and add the remaining vegetables, except for the tomatoes.</p> <p>Wash the herbs, pluck the leaves from the stems and chop finely. Add to the ratatouille and steam for about 10 minutes, stirring occasionally. Just before the end, add the tomatoes and season with salt and pepper.</p>",
+    "saving": 19.1,
+    "ingridients": [
+      {
+        "name": "Pepper",
+        "ignore": true
+      },
+      {
+        "name": "Banana Pepper",
+        "unit": "piece(s)",
+        "amount": 2,
+        "internalAmount": 200
+      },
+      {
+        "name": "Yellow Pepper",
+        "unit": "piece(s)",
+        "amount": 1,
+        "internalAmount": 250
+      },
+      {
+        "name": "Banana Pepper",
+        "unit": "piece(s)",
+        "amount": 2,
+        "internalAmount": 319
+      },
+      {
+        "name": "Eggplant",
+        "unit": "piece(s)",
+        "amount": 1,
+        "internalAmount": 340
+      },
+      {
+        "name": "Courgette",
+        "unit": "piece(s)",
+        "amount": 1,
+        "internalAmount": 220
+      },
+      {
+        "name": "Cherry Tomatos",
+        "unit": "g",
+        "amount": 200,
+        "internalAmount": 200
+      },
+      {
+        "name": "Red Onion",
+        "unit": "piece(s)",
+        "amount": 1,
+        "internalAmount": 83
+      },
+      {
+        "name": "Cherry Tomatos",
+        "unit": "g",
+        "amount": 200,
+        "internalAmount": 200
+      },
+      {
+        "name": "Olive Oil",
+        "unit": "tablespoon(s)",
+        "amount": 2,
+        "internalAmount": 30
+      },
+      {
+        "name": "Garlic",
+        "unit": "clove",
+        "amount": 2,
+        "internalAmount": 6
+      },
+      {
+        "name": "tomato pith",
+        "unit": "tablespoon(s)",
+        "amount": 1,
+        "internalAmount": 20
+      },
+      {
+        "name": "Red Wine",
+        "ignore": true,
+        "unit": "tablespoon(s)",
+        "amount": 1
+      },
+      {
+        "name": "rosemary",
+        "unit": "branches",
+        "amount": 2,
+        "internalAmount": 6
+      },
+      {
+        "name": "thyme",
+        "unit": "branches",
+        "amount": 4,
+        "internalAmount": 12
+      }
+    ],
+    "category": ["vegetarian", "vegan"]
+  },
+  "2": {
+    "name": "2",
+    "image": "https://www.ndr.de/ratgeber/kochen/ratatouille104_v-podcast.jpg",
+    "saving": 3.1,
+    "category": ["pasta", "meat"]
+  },
+  "3": {
+    "name": "3",
+    "image": "https://www.ndr.de/ratgeber/kochen/ratatouille104_v-podcast.jpg",
+    "saving": 25.1,
+    "category": ["fish", "rice"]
+  }
 }

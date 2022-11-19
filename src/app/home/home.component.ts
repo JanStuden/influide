@@ -1,6 +1,7 @@
 import { Component, OnInit, Renderer2, ElementRef } from '@angular/core';
 import { ReceiptService } from '../services/receipt.service';
-import { FormGroup, FormControl, FormArray, FormBuilder } from '@angular/forms' 
+import { CalculationService } from '../services/calculation.service';
+import { SavingService } from '../services/saving.service';
 
 @Component({
   selector: 'app-home',
@@ -11,17 +12,25 @@ export class HomeComponent implements OnInit {
   public view = [700, 300];
   public data;
   public receipts: any;
-  public receiptCategory = ["vegetarian", "vegan", "noodles", "rice", "fish", "meat"]
+  public receiptCategory = [
+    'vegetarian',
+    'vegan',
+    'noodles',
+    'rice',
+    'fish',
+    'meat',
+  ];
   public group: any;
-  public searchQuery : string;
-  private selectedArray :any = []
-  
+  public searchQuery: string;
+  private selectedArray: any = [];
+  public savings: any = []
 
   constructor(
     private _renderer: Renderer2,
     private _el: ElementRef,
     private receiptService: ReceiptService,
-    
+    private calculationService: CalculationService,
+    private savingService: SavingService
   ) {
     this.data = [
       {
@@ -348,49 +357,80 @@ export class HomeComponent implements OnInit {
     this._renderer.setStyle(line, 'stroke-width', '8px');
   }
   ngOnInit(): void {
-    this.loadReceipts();
+    this.recommendedReceipts();
   }
 
-  loadReceipts() {
+  recommendedReceipts() {
+    let recommendedReceipts;
+    this.savings = this.savingService.getSavings();
+
     this.receiptService.getReceipts().subscribe((receipts: any) => {
-      this.receipts = Object.entries(receipts);
+      recommendedReceipts = Object.entries(receipts);
+
+      if (this.savings.length > 0) {
+        let receipt = this.savings[0];
+
+        // Pick random index from all receipts in savings
+        if (this.savings.length > 1) {
+          let min = 0;
+          let max = this.savings.length;
+
+          let randomIndex = Math.floor(Math.random() * (max - min + 1)) + min;
+
+          receipt = this.savings[randomIndex];
+        }
+
+        let categories = receipts[receipt.id].category;
+
+        // At least one category must be fullfilled
+        recommendedReceipts = recommendedReceipts.filter((e: any) => {
+          let output = categories.some((element: any) => {
+            return e[1].category.includes(element);
+          });
+          return output;
+        });
+      }
+
+      this.receipts = recommendedReceipts;
     });
   }
 
-  filterReceipts(){
+  filterReceipts() {
     this.receiptService.getReceipts().subscribe((receipts: any) => {
       this.receipts = Object.entries(receipts);
-      
-      this.receipts=this.receipts.filter((e:any) => {
-        let output=this.selectedArray.every((element:any) => {
-            console.log("vorhandene Kat: " + e[1].category)
-            console.log("element: "+ element)
-            // console.log(this.receipts[0][1].category.includes(element))
-            return e[1].category.includes(element)
-        })
-        console.log(output)
+
+      this.receipts = this.receipts.filter((e: any) => {
+        let output = this.selectedArray.every((element: any) => {
+          return e[1].category.includes(element);
+        });
         return output;
       });
-      
     });
   }
-  onFilterChange(event:any){
-    
-    if( event.value[0]!==undefined && !this.selectedArray.includes(event.value[0])){
-      this.selectedArray.push(event.value[0])
-    }
-    else{
-      this.selectedArray=this.selectedArray.filter((e:any)=> e !== event.source.value)
+  onFilterChange(event: any) {
+    if (
+      event.value[0] !== undefined &&
+      !this.selectedArray.includes(event.value[0])
+    ) {
+      this.selectedArray.push(event.value[0]);
+    } else {
+      this.selectedArray = this.selectedArray.filter(
+        (e: any) => e !== event.source.value
+      );
     }
   }
-  onKey(){
+  onKey() {
     this.receiptService.getReceipts().subscribe((receipts: any) => {
       this.receipts = Object.entries(receipts);
-      this.receipts=this.receipts.filter((e:any) => {
-        return e[1].name.toLowerCase().includes(this.searchQuery.toLowerCase())
-        console.log(e[1].name.includes(this.searchQuery))
+      this.receipts = this.receipts.filter((e: any) => {
+        return e[1].name.toLowerCase().includes(this.searchQuery.toLowerCase());
       });
     });
   }
-   
+
+  calculateSavings(receipt: any) {
+    let ingredients = this.receipts[receipt.id].ingridients;
+
+    this.calculationService.calculateReceiptSaving(ingredients);
+  }
 }

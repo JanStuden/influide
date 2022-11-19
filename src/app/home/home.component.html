@@ -17,29 +17,50 @@
     >
     </ngx-charts-line-chart>
   </div>
-  
-  <div *ngIf="receiptCategory">
-    <mat-button-toggle-group (change)="onFilterChange($event)" *ngFor="let category of receiptCategory" name="categories" aria-label="Ingredients" multiple>
-      <mat-button-toggle value={{category}} (click)="filterReceipts()">{{category}}</mat-button-toggle>
-    </mat-button-toggle-group>
-  </div>
- 
-    <mat-form-field (keyup)="onKey()"   class="example-full-width">
-      <mat-label>Favorite food</mat-label>
-      <input  [(ngModel)]="searchQuery" matInput placeholder="Ex. Pizza" >
-    </mat-form-field>
-  <p>{{searchQuery}}</p>
+
   <div class="recommendation-wrapper">
-    <h3 class="subheading">Recommendations based on your likes</h3>
+    <div class="recommendation-header">
+      <h3 class="subheading">
+        {{
+          searchQuery
+            ? "Results"
+            : savings.length >= 1
+            ? "Recommendations based on your likes"
+            : "Recipe recommendations"
+        }}
+      </h3>
+      <div *ngIf="receiptCategory" class="filter">
+        <mat-button-toggle-group
+          (change)="onFilterChange($event)"
+          *ngFor="let category of receiptCategory"
+          name="categories"
+          aria-label="Ingredients"
+          multiple
+        >
+          <mat-button-toggle
+            value="{{ category }}"
+            (click)="filterReceipts()"
+            >{{ category }}</mat-button-toggle
+          >
+        </mat-button-toggle-group>
+
+        <div>
+          <mat-form-field (keyup)="onKey()" class="search">
+            <mat-label>Favorite meal</mat-label>
+            <input [(ngModel)]="searchQuery" matInput placeholder="Ex. Pizza" />
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+
     <div class="recommendations" *ngIf="receipts">
-      <mat-grid-list
-        cols="3"
-        rowHeight="20em"
-        gutterSize="5em"
-        *ngFor="let receipt of receipts"
-      >
-        <mat-grid-tile>
-          <a routerLink="receipt/{{ receipt[0] }}" routerLinkActive="true">
+      <mat-grid-list cols="3" gutterSize="5em" rowHeight="fit">
+        <mat-grid-tile *ngFor="let receipt of receipts">
+          <a
+            routerLink="receipt/{{ receipt[0] }}"
+            routerLinkActive="true"
+            class="cardLink"
+          >
             <mat-card>
               <mat-card-header>
                 <mat-card-title>{{ receipt[1].name }}</mat-card-title>
@@ -49,12 +70,22 @@
                 [src]="receipt[1].image"
                 [alt]="receipt[1].name"
               />
-              <p>12%</p>
+              <p class="saving success" *ngIf="receipt[1].saving >= 25">
+                {{ receipt[1].saving }}
+              </p>
+              <p
+                class="saving neutral"
+                *ngIf="receipt[1].saving >= 10 && receipt[1].saving < 25"
+              >
+                {{ receipt[1].saving }}
+              </p>
+              <p class="saving warn" *ngIf="receipt[1].saving < 10">
+                {{ receipt[1].saving }}
+              </p>
             </mat-card>
           </a>
         </mat-grid-tile>
       </mat-grid-list>
     </div>
   </div>
-  
 </div>

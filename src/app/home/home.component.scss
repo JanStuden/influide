@@ -10,8 +10,22 @@
   margin: 0 auto;
 }
 
+.search{
+  width: 100%;
+  text-align: center;
+}
+
 .recommendation-wrapper {
   padding-top: 3em;
+}
+
+.recommendation-header{
+  display: flex;
+}
+
+.filter{
+  margin-left: auto;
+  padding-right: 8em;
 }
 
 .recommendations {
@@ -19,6 +33,34 @@
   display: flex;
   justify-content: center;
   min-height: 25em;
+  padding-top: 2em;
+}
+
+.cardLink{
+  text-decoration: none;
+}
+
+mat-card-header{
+  margin-top: 1em!important;
+}
+
+.saving {
+  text-align: right;
+  font-size: large;
+  padding: 0.5em 0.5em;
+  margin-bottom: 1.2em!important;
+}
+
+.success{
+  color: #2dd36f;
+}
+
+.neutral {
+  color: #006600;
+}
+
+.warn{
+  color: #ffc409;
 }
 
 mat-grid-list {
@@ -35,3 +77,4 @@ mat-grid-list {
 .line {
   stroke-width: 50px;
 }
+
