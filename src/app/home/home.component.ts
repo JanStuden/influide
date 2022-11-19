@@ -392,14 +392,5 @@ export class HomeComponent implements OnInit {
       });
     });
   }
-  public addColoumn() {
-
-  }
-  public removeColoumn(event:any){
-
-  
-  }
-  quantities() : FormArray {  
-    return this.productForm.get("quantities") as FormArray  
-  }  
+   
 }

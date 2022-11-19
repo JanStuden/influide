@@ -1,25 +1,30 @@
 <div role="main" class="main">
   <mat-grid-list cols="2" rowHeight="1:1" class="container">
     <mat-grid-tile>
-      <h1>{{ receipt.name }}</h1>
+      <div>
+        <h1>{{ receipt ? receipt.name : ''}}</h1>
+        <p class="savingsCalculation">{{saving}}%</p>
+      </div>
     </mat-grid-tile>
     <mat-grid-tile>
-      <img [src]="receipt.image" alt="{{ receipt.name }}" />
+      <img *ngIf="receipt" [src]="receipt.image" alt="{{ receipt.name}}" />
     </mat-grid-tile>
     <mat-grid-tile>
       <div>
         <div class="ingridientHeader">
           <p>Ingridients</p>
-          <span class="spacer"></span>
-          <p class="savingsCalculation">15%</p>
         </div>
         <div class="portionInput">
-          <button mat-raised-button (click)="decreasePortions()">-</button>
+          <button mat-raised-button (click)="decreasePortions()">
+            <mat-icon>remove</mat-icon>
+          </button>
           <mat-form-field appearance="fill">
             <mat-label>Portions</mat-label>
             <input matInput disabled [(ngModel)]="portions" />
           </mat-form-field>
-          <button mat-raised-button (click)="portions = portions + 1">+</button>
+          <button mat-raised-button (click)="portions = portions + 1">
+            <mat-icon>add</mat-icon>
+          </button>
         </div>
 
         <div *ngIf="ingridients">
@@ -48,7 +53,7 @@
       <div>
         <p>Receipt details</p>
         <div [innerHTML]="instructions"></div>
-        <button mat-raised-button>Add to Savings</button>
+        <button mat-raised-button (click)="addSaving()">Add to Savings</button>
       </div>
     </mat-grid-tile>
   </mat-grid-list>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { CalculationService } from '../services/calculation.service';
 import { ReceiptService } from '../services/receipt.service';
+import { SavingService } from '../services/saving.service';
 
 @Component({
   selector: 'app-detail',
@@ -14,10 +16,13 @@ export class DetailComponent implements OnInit {
   public portions: number = 4;
   public defaultPortions: number = 4;
   public receipt: any;
+  public saving: string;
 
   constructor(
     private receiptService: ReceiptService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private savingService: SavingService,
+    private calculationService: CalculationService
   ) {
     route.params.subscribe((params) => {
       this.id = params['id'];
@@ -34,14 +39,32 @@ export class DetailComponent implements OnInit {
     }
   }
 
-  private parseReceipt() {
+  private parseReceipt(): void {
     this.receiptService.getReceipts().subscribe((receipts: any) => {
       let receipt = receipts[this.id];
       this.receipt = receipt;
 
       this.ingridients = receipt.ingridients;
       this.instructions = receipt.instructions;
+
+      this.calculateSaving();
     });
   }
   
+  private calculateSaving() {
+    let saving = this.calculationService.calculateReceiptSaving(
+      this.ingridients
+    );
+
+    this.saving = saving.toFixed(1);
+  }
+
+  public addSaving() {
+    let receipt = {
+      id: this.id,
+      name: this.receipt.name,
+      saving: this.saving,
+    };
+    this.savingService.addSaving(receipt);
+  }
 }

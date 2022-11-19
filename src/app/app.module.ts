@@ -17,11 +17,18 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
-
-
+import { SavingsComponent } from './savings/savings.component';
+import { OwnReceiptComponent } from './own-receipt/own-receipt.component';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, DetailComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    DetailComponent,
+    SavingsComponent,
+    OwnReceiptComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -37,7 +44,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     MatChipsModule,
     MatButtonToggleModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent],
