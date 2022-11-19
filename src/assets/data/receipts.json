@@ -97,15 +97,196 @@
     "category": ["vegetarian", "vegan"]
   },
   "2": {
-    "name": "2",
-    "image": "https://www.ndr.de/ratgeber/kochen/ratatouille104_v-podcast.jpg",
+    "name": "Goulash",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5_Q93x-NdUGY4lRr9twUlpb_1YW-1ex4-oA&usqp=CAU",
     "saving": 3.1,
-    "category": ["pasta", "meat"]
+    "ingridients":[
+      {
+        "name": "Pepper",
+        "ignore": true
+      },
+      {
+        "name": "Beef",
+        "unit": "g",
+        "amount": 1000,
+        "internalAmount": 1000
+      },
+      {
+        "name": "Red Pepper",
+        "unit": "g",
+        "amount": 250,
+        "internalAmount": 250
+      },
+      {
+        "name": "Beef stock",
+        "unit": "ml",
+        "amount": 500,
+        "internalAmount": 500
+      },
+      {
+        "name": "Laurel leaf",
+        "unit": "piece(s)",
+        "amount": 1,
+        "internalAmount": 0.2
+      },
+      {
+        "name": "Cornflour",
+        "unit": "tablespoon(s)",
+        "amount": 1,
+        "internalAmount": 15
+      },
+      {
+        "name": "Chreme Fraiche",
+        "unit": "g",
+        "amount": 50,
+        "internalAmount": 50
+      },
+      {
+        "name": "Onion",
+        "unit": "g",
+        "amount": 500,
+        "internalAmount": 500
+      },
+      {
+        "name": "Olive Oil",
+        "unit": "tablespoon(s)",
+        "amount": 3,
+        "internalAmount": 45
+      },
+      {
+        "name": "Garlic",
+        "unit": "clove",
+        "amount": 2,
+        "internalAmount": 6
+      },
+      {
+        "name": "tomato pith",
+        "unit": "g",
+        "amount": 25,
+        "internalAmount": 25
+      },
+      {
+        "name": "Red Wine",
+        "ignore": true,
+        "unit": "tablespoon(s)",
+        "amount": 1
+      },
+      {
+        "name": "Noodle",
+        "unit": "g",
+        "amount": 500,
+        "internalAmount": 500
+
+      },
+      {
+        "name": "Paprika spice",
+        "ignore": true,
+        "unit": "tablespoon(s)",
+        "amount": 2
+      }
+    ],
+    "category": ["noodles", "meat"]
   },
   "3": {
-    "name": "3",
-    "image": "https://www.ndr.de/ratgeber/kochen/ratatouille104_v-podcast.jpg",
+    "name": "Sweet Potato Curry",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE1phYjYtfQOqP1uFpSivmdw-xxDI9EWuGSg&usqp=CAU",
     "saving": 25.1,
-    "category": ["fish", "rice"]
+    "ingridients":[
+      {
+        "name": "Potatos",
+        "unit": "g",
+        "amount": 800,
+        "internalAmount": 800
+      },
+      {
+        "name": "Onion",
+        "unit": "piece(s)",
+        "amount": 1,
+        "internalAmount": 63
+      },
+      {
+        "name": "Ginger",
+        "ignore": true,
+        "unit": "pieces(s)",
+        "amount": 1
+      },
+      {
+        "name": "Rapeseed Oil",
+        "unit": "tablespoon(s)",
+        "amount": 3,
+        "internalAmount": 45
+      },
+      {
+        "name": "Garam Masala Spice",
+        "unit": "tablespoon(s)",
+        "amount": 2,
+        "internalAmount": 20
+      },
+      {
+        "name": "Turmeric",
+        "unit": "teaspoon(s)",
+        "amount": 1,
+        "internalAmount": 5
+      },
+      {
+        "name": "Cumin",
+        "unit": "teaspoon(s)",
+        "amount": 0.5,
+        "internalAmount": 2.5
+      },
+      {
+        "name": "Strained Tomatoes",
+        "unit": "g",
+        "amount": 700,
+        "internalAmount": 700
+      },
+      {
+        "name": "Peanut butter",
+        "unit": "tablespoon(s)",
+        "amount": 1,
+        "internalAmount": 25
+      },
+      {
+        "name": "Cilantro",
+        "unit": "g",
+        "amount": 15,
+        "internalAmount": 15
+      },
+      {
+        "name": "Rice",
+        "unit": "g",
+        "amount": 240,
+        "internalAmount": 240
+      }
+    ],
+    "category": ["vegan", "rice","vegetarian","potatos"]
+  },
+  "4": {
+    "name": "Courgette vegetables with salmon",
+    "image": "https://www.ndr.de/ratgeber/kochen/ratatouille104_v-podcast.jpg",
+    "instructions": "<p>Core the peppers and cut into small pieces with the aubergine and courgettes. Halve the cherry tomatoes. Peel the onion and cut into strips</p><p>Heat the olive oil in a pan. Press the garlic cloves with a knife and fry lightly with the onions. Add the tomato paste, fry briefly, deglaze with red wine and add the remaining vegetables, except for the tomatoes.</p> <p>Wash the herbs, pluck the leaves from the stems and chop finely. Add to the ratatouille and steam for about 10 minutes, stirring occasionally. Just before the end, add the tomatoes and season with salt and pepper.</p>",
+    "saving": 8.1,
+    "ingridients": [
+      {
+        "name": "Courgette",
+        "unit": "piece(s)",
+        "amount": 3,
+        "internalAmount": 660
+      },
+      {
+        "name": "Salmon",
+        "unit": "piece(s)",
+        "amount": 4,
+        "internalAmount": 600
+      },
+      {
+        "name": "Rice",
+        "unit": "g",
+        "amount": 200,
+        "internalAmount": 200
+      }
+     
+    ],
+    "category": ["rice","fish"]
   }
 }
