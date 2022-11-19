@@ -1,0 +1,64 @@
+{
+  "groceries": [
+    {
+      "name": "Banana Pepper",
+      "price": 0.01199,
+      "category": "CC13-0117133100"
+    },
+    {
+      "name": "yellow pepper",
+      "price": 0.00499,
+      "category": "CC13-0117133100"
+    },
+    {
+      "name": "eggplant",
+      "price": 0.00289,
+      "category": "CC13-0117139000"
+    },
+    {
+      "name": "courgette",
+      "price": 0.00259,
+      "category": "CC13-0117149100"
+    },
+    {
+      "name": "cherry tomatos",
+      "price": 0.00396,
+      "category": "CC13-0117131100"
+    },
+    {
+      "name": "red onion",
+      "price": 0.00258,
+      "category": "CC13-0117141100"
+    },
+    {
+      "name": "olive oil",
+      "price": 0.03278,
+      "category": "CC13-0115300100"
+    },
+    {
+      "name": "garlic",
+      "price": 0.00495,
+      "category": "CC13-0117141100"
+    },
+    {
+      "name": "tomato pith",
+      "price": 0.00495,
+      "category": "CC13-0119103200"
+    },
+    {
+      "name": "red wine",
+      "price": 0.01,
+      "category": "CC13-0117133100"
+    },
+    {
+      "name": "rosemary",
+      "price": 0.066,
+      "category": "CC13-0119203100"
+    },
+    {
+      "name": "thyme",
+      "price": 0.066,
+      "category": "CC13-0119203100"
+    }
+  ]
+}
