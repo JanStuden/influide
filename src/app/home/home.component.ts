@@ -373,9 +373,11 @@ export class HomeComponent implements OnInit {
         // Pick random index from all receipts in savings
         if (this.savings.length > 1) {
           let min = 0;
-          let max = this.savings.length;
+          let max = this.savings.length - 1;
 
           let randomIndex = Math.floor(Math.random() * (max - min + 1)) + min;
+
+          console.log(randomIndex)
 
           receipt = this.savings[randomIndex];
         }

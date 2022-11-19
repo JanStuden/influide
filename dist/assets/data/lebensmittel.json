@@ -6,6 +6,31 @@
       "category": "CC13-0117133100"
     },
     {
+      "name": "Potatos",
+      "price": 0.00186,
+      "category": "CC13-0117401300"
+    },
+    {
+      "name": "Chicken",
+      "price": 0.03843,
+      "category": "CC13-0112410100"
+    },
+    {
+      "name": "Onion",
+      "price": 0.00258,
+      "category": "CC13-0117141100"
+    },
+    {
+      "name": "Pasta",
+      "price": 0.00289,
+      "category": "CC13-0111610100"
+    },
+    {
+      "name": "Prawns",
+      "price": 0.03996,
+      "category": "CC13-0113300200"
+    },
+    {
       "name": "yellow pepper",
       "price": 0.00499,
       "category": "CC13-0117133100"

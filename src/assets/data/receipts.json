@@ -3,7 +3,7 @@
     "name": "Ratatouille",
     "image": "https://www.ndr.de/ratgeber/kochen/ratatouille104_v-podcast.jpg",
     "instructions": "<p>Core the peppers and cut into small pieces with the aubergine and courgettes. Halve the cherry tomatoes. Peel the onion and cut into strips</p><p>Heat the olive oil in a pan. Press the garlic cloves with a knife and fry lightly with the onions. Add the tomato paste, fry briefly, deglaze with red wine and add the remaining vegetables, except for the tomatoes.</p> <p>Wash the herbs, pluck the leaves from the stems and chop finely. Add to the ratatouille and steam for about 10 minutes, stirring occasionally. Just before the end, add the tomatoes and season with salt and pepper.</p>",
-    "saving": 19.1,
+    "saving": -4.9,
     "ingridients": [
       {
         "name": "Pepper",
@@ -99,7 +99,7 @@
   "2": {
     "name": "Goulash",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5_Q93x-NdUGY4lRr9twUlpb_1YW-1ex4-oA&usqp=CAU",
-    "saving": 3.1,
+    "saving": 9.2,
     "ingridients":[
       {
         "name": "Pepper",
@@ -190,7 +190,7 @@
   "3": {
     "name": "Sweet Potato Curry",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE1phYjYtfQOqP1uFpSivmdw-xxDI9EWuGSg&usqp=CAU",
-    "saving": 25.1,
+    "saving": -2.8,
     "ingridients":[
       {
         "name": "Potatos",
