@@ -1,7 +1,10 @@
 <div role="main" class="main">
   <mat-grid-list cols="2" rowHeight="1:1" class="container">
     <mat-grid-tile>
-      <h1>{{ receipt.name }}</h1>
+      <div>
+        <h1>{{ receipt.name }}</h1>
+        <p class="savingsCalculation">{{saving}}%</p>
+      </div>
     </mat-grid-tile>
     <mat-grid-tile>
       <img [src]="receipt.image" alt="{{ receipt.name }}" />
@@ -10,8 +13,6 @@
       <div>
         <div class="ingridientHeader">
           <p>Ingridients</p>
-          <span class="spacer"></span>
-          <p class="savingsCalculation">15%</p>
         </div>
         <div class="portionInput">
           <button mat-raised-button (click)="decreasePortions()">-</button>
