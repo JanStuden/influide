@@ -41,7 +41,17 @@
       "category": "CC13-0117139000"
     },
     {
-      "name": "courgette",
+      "name": "Rice",
+      "price": 0.00658,
+      "category": "CC13-0111101100"
+    },
+    {
+      "name": "Salmon",
+      "price": 0.02196,
+      "category": "CC13-0113100200"
+    },
+    {
+      "name": "Courgette",
       "price": 0.00259,
       "category": "CC13-0117149100"
     },
@@ -83,6 +93,31 @@
     {
       "name": "thyme",
       "price": 0.066,
+      "category": "CC13-0119203100"
+    },
+    {
+      "name": "Beef",
+      "price": 0.03890,
+      "category": "CC13-0112101100"
+    },
+    {
+      "name": "Chreme Fraiche",
+      "price": 0.00860,
+      "category": "CC13-0114400200"
+    },
+    {
+      "name": "Peanut butter",
+      "price": 0.00796,
+      "category": "CC13-0118205100"
+    },
+    {
+      "name": "Peanut butter",
+      "price": 0.00796,
+      "category": "CC13-0118205100"
+    },
+    {
+      "name": "Garam Masala Spice",
+      "price": 0.07797,
       "category": "CC13-0119203100"
     }
   ]

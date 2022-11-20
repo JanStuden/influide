@@ -66,16 +66,16 @@
               <div class="image-container">
                 <img [src]="receipt[1].image" [alt]="receipt[1].name" />
               </div>
-              <p class="saving success" *ngIf="receipt[1].saving >= 25">
+              <p class="saving success" *ngIf="receipt[1].saving >= 5">
                 {{ receipt[1].saving }}
               </p>
               <p
                 class="saving neutral"
-                *ngIf="receipt[1].saving >= 10 && receipt[1].saving < 25"
+                *ngIf="receipt[1].saving >= 2 && receipt[1].saving < 5"
               >
                 {{ receipt[1].saving }}
               </p>
-              <p class="saving warn" *ngIf="receipt[1].saving < 10">
+              <p class="saving warn" *ngIf="receipt[1].saving < 2">
                 {{ receipt[1].saving }}
               </p>
             </a>

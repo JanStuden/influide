@@ -3,9 +3,9 @@
     <mat-grid-tile>
       <div>
         <h1>{{ receipt ? receipt.name : "" }}</h1>
-        <p class="savingsCalculation success" *ngIf="savingNumber >= 25">{{ saving }}%</p>
-        <p class="savingsCalculation neutral" *ngIf="savingNumber > 25 && savingNumber < 10">{{ saving }}%</p>
-        <p class="savingsCalculation warn" *ngIf="savingNumber <= 10">{{ saving }}%</p>
+        <p class="savingsCalculation success" *ngIf="savingNumber >= 5">{{ saving }}%</p>
+        <p class="savingsCalculation neutral" *ngIf="savingNumber < 5 && savingNumber >= 2">{{ saving }}%</p>
+        <p class="savingsCalculation warn" *ngIf="savingNumber < 2">{{ saving }}%</p>
       </div>
     </mat-grid-tile>
     <mat-grid-tile>
