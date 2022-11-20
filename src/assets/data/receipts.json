@@ -111,30 +111,7 @@
         "amount": 1000,
         "internalAmount": 1000
       },
-      {
-        "name": "Red Pepper",
-        "unit": "g",
-        "amount": 250,
-        "internalAmount": 250
-      },
-      {
-        "name": "Beef stock",
-        "unit": "ml",
-        "amount": 500,
-        "internalAmount": 500
-      },
-      {
-        "name": "Laurel leaf",
-        "unit": "piece(s)",
-        "amount": 1,
-        "internalAmount": 0.2
-      },
-      {
-        "name": "Cornflour",
-        "unit": "tablespoon(s)",
-        "amount": 1,
-        "internalAmount": 15
-      },
+      
       {
         "name": "Chreme Fraiche",
         "unit": "g",
@@ -142,47 +119,11 @@
         "internalAmount": 50
       },
       {
-        "name": "Onion",
-        "unit": "g",
-        "amount": 500,
-        "internalAmount": 500
-      },
-      {
-        "name": "Olive Oil",
-        "unit": "tablespoon(s)",
-        "amount": 3,
-        "internalAmount": 45
-      },
-      {
-        "name": "Garlic",
-        "unit": "clove",
-        "amount": 2,
-        "internalAmount": 6
-      },
-      {
-        "name": "tomato pith",
-        "unit": "g",
-        "amount": 25,
-        "internalAmount": 25
-      },
-      {
-        "name": "Red Wine",
-        "ignore": true,
-        "unit": "tablespoon(s)",
-        "amount": 1
-      },
-      {
-        "name": "Noodle",
+        "name": "Pasta",
         "unit": "g",
         "amount": 500,
         "internalAmount": 500
 
-      },
-      {
-        "name": "Paprika spice",
-        "ignore": true,
-        "unit": "tablespoon(s)",
-        "amount": 2
       }
     ],
     "category": ["noodles", "meat"]
@@ -205,52 +146,16 @@
         "internalAmount": 63
       },
       {
-        "name": "Ginger",
-        "ignore": true,
-        "unit": "pieces(s)",
-        "amount": 1
-      },
-      {
-        "name": "Rapeseed Oil",
-        "unit": "tablespoon(s)",
-        "amount": 3,
-        "internalAmount": 45
-      },
-      {
         "name": "Garam Masala Spice",
         "unit": "tablespoon(s)",
         "amount": 2,
         "internalAmount": 20
       },
       {
-        "name": "Turmeric",
-        "unit": "teaspoon(s)",
-        "amount": 1,
-        "internalAmount": 5
-      },
-      {
-        "name": "Cumin",
-        "unit": "teaspoon(s)",
-        "amount": 0.5,
-        "internalAmount": 2.5
-      },
-      {
-        "name": "Strained Tomatoes",
-        "unit": "g",
-        "amount": 700,
-        "internalAmount": 700
-      },
-      {
         "name": "Peanut butter",
         "unit": "tablespoon(s)",
         "amount": 1,
         "internalAmount": 25
-      },
-      {
-        "name": "Cilantro",
-        "unit": "g",
-        "amount": 15,
-        "internalAmount": 15
       },
       {
         "name": "Rice",
