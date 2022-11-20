@@ -2,12 +2,14 @@
   <mat-grid-list cols="2" rowHeight="1:1" class="container">
     <mat-grid-tile>
       <div>
-        <h1>{{ receipt ? receipt.name : ''}}</h1>
-        <p class="savingsCalculation">{{saving}}%</p>
+        <h1>{{ receipt ? receipt.name : "" }}</h1>
+        <p class="savingsCalculation success" *ngIf="savingNumber >= 25">{{ saving }}%</p>
+        <p class="savingsCalculation neutral" *ngIf="savingNumber > 25 && savingNumber < 10">{{ saving }}%</p>
+        <p class="savingsCalculation warn" *ngIf="savingNumber <= 10">{{ saving }}%</p>
       </div>
     </mat-grid-tile>
     <mat-grid-tile>
-      <img *ngIf="receipt" [src]="receipt.image" alt="{{ receipt.name}}" />
+      <img *ngIf="receipt" [src]="receipt.image" alt="{{ receipt.name }}" />
     </mat-grid-tile>
     <mat-grid-tile>
       <div>
@@ -38,11 +40,12 @@
               {{ ingridient.unit }} {{ ingridient.name }}
             </li>
           </ul>
+          <i>{{ ingridients.length <= 5 ? "Probably some more ;)" : "" }}</i>
         </div>
 
         <a
           mat-raised-button
-          href="https://shop.rewe.de/recipes/mapping/826ac032201043a2a6c3af7d7bdfe3de392a6269b442750e2e190bcf2c2e0f61?serviceTypes=delivery"
+          [href]="receipt.shopUrl"
           target="_blank"
           class="buyButton"
           ><mat-icon>add_shopping_cart</mat-icon> Buy on REWE</a
@@ -57,5 +60,4 @@
       </div>
     </mat-grid-tile>
   </mat-grid-list>
-  
 </div>

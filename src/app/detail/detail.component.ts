@@ -17,6 +17,7 @@ export class DetailComponent implements OnInit {
   public defaultPortions: number = 4;
   public receipt: any;
   public saving: string;
+  public savingNumber: number;
 
   constructor(
     private receiptService: ReceiptService,
@@ -50,12 +51,13 @@ export class DetailComponent implements OnInit {
       this.calculateSaving();
     });
   }
-  
+
   private calculateSaving() {
     let saving = this.calculationService.calculateReceiptSaving(
       this.ingridients
     );
 
+    this.savingNumber = saving;
     this.saving = saving.toFixed(1);
   }
 
